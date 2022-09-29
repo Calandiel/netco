@@ -1,0 +1,20 @@
+[package]
+name = "netco"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+x25519-dalek = "1.2.0"
+sha3 = "0.10.1"
+aes-gcm-siv = "0.11.1"
+old_rand = { package = "rand", version = "0.7.0" }
+ahash = "*"
+serde = { version = "*", features = ["derive"] }
+bincode = "*"
+num-traits = "0.2"
+num-derive = "0.3"
+nanorand = "0.7.0"
+thiserror = "*"
+anyhow = "*"
