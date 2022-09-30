@@ -9,6 +9,15 @@ A low level UDP networking library for real-time applications and games. Develop
 Core features are implemented and have been tested in an in-development project. The library is under development but not very likely to have significant API changes. It'll land on crates.io when the accompanying documentation is finished and when library itself is thoroughly unit-tested.
 
 
+## Table of contents:
+- [Design and library comparison](#design-and-library-comparison)
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Contributing](#contribution)
+- [Authors](#authors)
+- [License](#license)
+
+
 ## Design and library comparison
 `netco` aims to be a low level alternative to networking libraries for games and other real-time applications that require reliability and connections.
 The API aims to be simple and based around function calls. All packet sending is handled through functions that take in a vector and `netco` handles their reliability, verification and encryption, as applicable.
@@ -141,3 +150,23 @@ cl.send_encrypted_packet(data.clone());
 // For example, logged-in clients can update their passwords:
 cl.change_password("NewPassword".to_string()).unwrap();
 ```
+
+
+## Authors
+
+- [Calandiel](https://github.com/Calandiel)
+
+
+## Contribution
+
+Unless you explicitly state otherwise, any contribution intentionally submitted
+for inclusion in the work by you, as defined in the Apache-2.0 license, shall be dual licensed as above, without any
+additional terms or conditions.
+
+
+## License
+
+Licensed under either of
+ * Apache License, Version 2.0 ([LICENSE-APACHE](docs/LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
+ * MIT license ([LICENSE-MIT](docs/LICENSE-MIT) or http://opensource.org/licenses/MIT)
+at your option.
