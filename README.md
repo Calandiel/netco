@@ -40,6 +40,7 @@ Add netco package to your `Cargo.toml` file.
 netco = { git = "https://github.com/Calandiel/netco.git" }
 ```
 
+
 Create the server and the client
 
 ```rust
@@ -63,6 +64,7 @@ let mut cl = netco::client::Client::new(
 ).unwrap();
 ```
 
+
 Call every game frame to send and receive packets
 
 ```rust
@@ -72,6 +74,7 @@ sr.service().unwrap();
 // CLIENT
 cl.service().unwrap();
 ```
+
 
 Messages are stored after servicing until the application handles them
 
@@ -88,6 +91,7 @@ while let Some(v) = cl.get_next_message() {
   println!("CLIENT EVENT: {:?}", v);
 }
 ```
+
 
 Sending data
 
