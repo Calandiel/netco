@@ -49,7 +49,7 @@ let mut sr = netco::server::Server::new(
   "password".to_string(), // server password that clients need to provide to connect
   100, // Game version
   1000 // Maximum number of players
-).unwrap();
+).unwrap(); // In a real application you'd likely want to deal with any potential errors instead of panicking when they occur
 
 // CLIENT
 let mut cl = netco::client::Client::new(
