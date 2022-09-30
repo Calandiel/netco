@@ -91,7 +91,7 @@ while let Some(v) = cl.get_next_message() {
 
 Sending data
 
-```
+```rust
 // All packet sending functions take in a vector of bytes as inputs
 // In a real application, you'd likely want to create this vector with some serialization library
 // Bincode and serde are good candidates if one isn't very heavily bandwidth limited.
