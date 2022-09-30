@@ -25,11 +25,11 @@ The API aims to be simple and based around function calls. All packet sending is
 Compared to `ENet` and `laminar`, it provides some common abstractions that most games utilizing the authoritative server-client architecture implement (for example, Clients/Peers are referenced by Strings representing their nicknames, instead of raw addresses).
 `netco` also provides password based verification for connections, both at a server level and at an account level, which offers additional protection against malicious actors that `ENet` can't offer (as it needs to accept a connection before it can be verified with a password at an application level).
 
-Unlike `laminar`, it takes a much stronger stance on heartbeats and reliability. *All* reliable packets in `netco` are guaranteed to be delivered, whereas in laminar, [reliability breaks when the ring buffer is overflows][lambug], a conscious design decision taken by `laminar`'s developers.
+Unlike `laminar`, it takes a much stronger stance on heartbeats and reliability. *All* reliable packets in `netco` are guaranteed to be delivered, whereas in laminar, [reliability breaks when the ring buffer overflows][lambug], a conscious design decision taken by `laminar`'s developers.
 
 [lambug]: https://github.com/TimonPost/laminar/issues/303
 
-The library should *never* panic and contains no unsafe code. This was verified by extensive use in one of authors projects but more formal unit testing will be performed before the library is published to crates.io.
+`netco` should *never* panic and contains no unsafe code. This was verified by extensive use in one of authors projects but more formal unit testing will be performed before the library is published to crates.io.
 
 
 ## Features
