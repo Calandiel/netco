@@ -60,8 +60,7 @@ let mut cl = netco::client::Client::new(
   "Nickname".to_string(), // Nickname of the account to use
   "client_password".to_string(), // Password of the account to use
   true,
-)
-.unwrap();
+).unwrap();
 ```
 
 
