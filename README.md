@@ -6,7 +6,7 @@ A low level UDP networking library for real-time applications and games. Largely
 [naia]: https://github.com/naia-lib/naia
 [gog]: https://gafferongames.com/
 
-Core features are implemented and have been tested in an in-development project. The library is under development but not very likely to have significant API changes. It'll land on crates.io when the accompanying documentation is finished and when libraty itself is throughly unit-tested.
+Core features are implemented and have been tested in an in-development project. The library is under development but not very likely to have significant API changes. It'll land on crates.io when the accompanying documentation is finished and when library itself is thoroughly unit-tested.
 
 
 ## Features
