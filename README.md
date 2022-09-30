@@ -32,10 +32,37 @@ Core features are implemented and have been tested in an in-development project.
 
 
 ## Getting Started
+
 Add netco package to your `Cargo.toml` file.
 
 ```toml
 [dependencies]
 netco = { git = "https://github.com/Calandiel/netco.git" }
 ```
+
+Create the server and the client
+
+```rust
+// SERVER
+let mut sr = netco::server::Server::new(
+  "127.0.0.1:3456", // address to bind
+  "password".to_string(), // server password that clients need to provide to connect
+  100, // Game version
+  1000 // Maximum number of players
+).unwrap();
+
+// CLIENT
+let mut cl = netco::client::Client::new(
+	"127.0.0.1:4567", // address to bind
+	"127.0.0.1:3456", // server address
+	100, // Game version
+	"password".to_string(), // server password that clients need to provide to connect
+	"Nickname".to_string(), // Nickname of the account to use
+	"client_password".to_string(), // Password of the account to use
+	true,
+)
+.unwrap();
+```
+
+
 
