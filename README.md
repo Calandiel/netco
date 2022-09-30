@@ -73,7 +73,8 @@ sr.service().unwrap();
 cl.service().unwrap();
 ```
 
-Messages are stored after servicing until the application handles them:
+Messages are stored after servicing until the application handles them
+
 ```rust
 // SERVER
 while let Some(v) = sr.get_next_message() { // get next message returns None when there are no more messages to handle
@@ -86,4 +87,39 @@ while let Some(v) = sr.get_next_message() { // get next message returns None whe
 while let Some(v) = cl.get_next_message() {
   println!("CLIENT EVENT: {:?}", v);
 }
+```
+
+Sending data
+
+```
+// All packet sending functions take in a vector of bytes as inputs
+// In a real application, you'd likely want to create this vector with some serialization library
+// Bincode and serde are good candidates if one isn't very heavily bandwidth limited.
+let data = vec![1, 2, 3, 4, 5];
+
+// Unreliable packets:
+// SERVER
+sr.send_unreliable_unordered_packet(
+  &"PlayerNickname".to_string(), // the server also needs to specify which client to send the data to. Clients are referenced by their nickname (netco exposes a higher level abstraction than ENet and laminar)
+  data.clone()
+);
+// CLIENT
+cl.send_unreliable_unordered_packet(data.clone());
+
+// Reliable packets:
+// SERVER
+sr.send_reliable_ordered_packet(&"PlayerNickname".to_string(), data.clone());
+// CLIENT
+cl.send_reliable_ordered_packet(data.clone());
+
+// Encrypted packets:
+// SERVER
+sr.send_encrypted_packet(&"PlayerNickname".to_string(), data.clone());
+// CLIENT
+cl.send_encrypted_packet(data.clone());
+
+
+// Besides that, there's also a variety of functions to handle accounts themselves.
+// For example, logged-in clients can update their passwords:
+cl.change_password("NewPassword".to_string()).unwrap();
 ```
