@@ -166,4 +166,4 @@ additional terms or conditions.
 
 ## License
 
-Licensed under the MIT license ([LICENSE-MIT](docs/LICENSE-MIT) or http://opensource.org/licenses/MIT)
+Licensed under the [MIT license](LICENSE)
