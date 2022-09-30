@@ -1,5 +1,5 @@
 # netco
-A low level UDP networking library for real-time applications and games. Largely inspired by [Gaffer on Games][gog]. Developed as an alternative to [ENet][enet], [laminar][laminar] and [naia][naia].
+A low level UDP networking library for real-time applications and games. Developed as an alternative to [ENet][enet], [laminar][laminar] and [naia][naia]. Partially inspired by [Gaffer on Games][gog].
 
 [enet]: http://enet.bespin.org/
 [laminar]: https://github.com/TimonPost/laminar
@@ -10,8 +10,13 @@ Core features are implemented and have been tested in an in-development project.
 
 ## Design and library comparison
 `netco` aims to be a low level alternative to networking libraries for games and other real-time applications that require reliability and connections.
-The API aims to be simple and based around function calls. All packet sending is handled through functions that take in a vector and `netco` handles their reliability, verification and encryption, as applicable.
-Compared to ENet and laminar, it provides some common abstractions that most games utilizing the authoritative server-client architecture implement (for example, Clients/Peers are referenced by Strings representing their nicknames, instead of raw addresses). `netco` also provides password based verification for connections, both at a server level and at an account level, which offers additional protection against malicious actors that ENet can't offer (as it needs to accept a connection before it can be verified with a password at an application level). Unlike laminar, it takes a much stronger stance on heartbeats and reliability (*all* reliable packets in `netco` are guaranteed to be delivered, whereas in laminar, [eliability breaks when the ring buffer is overflows][lambug], a conscious design decision).
+The API aims to be simple and based around function calls.
+All packet sending is handled through functions that take in a vector and `netco` handles their reliability, verification and encryption, as applicable.
+
+Compared to `ENet` and `laminar`, it provides some common abstractions that most games utilizing the authoritative server-client architecture implement (for example, Clients/Peers are referenced by Strings representing their nicknames, instead of raw addresses).
+`netco` also provides password based verification for connections, both at a server level and at an account level, which offers additional protection against malicious actors that `ENet` can't offer (as it needs to accept a connection before it can be verified with a password at an application level).
+
+Unlike `laminar`, it takes a much stronger stance on heartbeats and reliability. *All* reliable packets in `netco` are guaranteed to be delivered, whereas in laminar, [eliability breaks when the ring buffer is overflows][lambug], a conscious design decision taken by `laminar`'s developers.
 
 [lambug]
 
