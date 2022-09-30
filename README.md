@@ -63,5 +63,27 @@ let mut cl = netco::client::Client::new(
 ).unwrap();
 ```
 
+Call every game frame to send and receive packets
 
+```rust
+// SERVER
+sr.service().unwrap();
 
+// CLIENT
+cl.service().unwrap();
+```
+
+Messages are stored after servicing until the application handles them:
+```rust
+// SERVER
+while let Some(v) = sr.get_next_message() { // get next message returns None when there are no more messages to handle
+  println!("SERVER EVENT: {:?}", v);
+  // the event is an enum and can contain information about received data packets, newly joining players, time-outs and so on
+  // in a real application, you'd want to handle it here (akin to how one would handle events in ENet)
+}
+
+// CLIENT
+while let Some(v) = cl.get_next_message() {
+  println!("CLIENT EVENT: {:?}", v);
+}
+```
