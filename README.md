@@ -6,7 +6,10 @@ A low level UDP networking library for real-time applications and games. Largely
 [naia]: https://github.com/naia-lib/naia
 [gog]: https://gafferongames.com/
 
+
 ## Features
+
+Core features are implemented and have been tested in an in-development project. The library is under development but not very likely to have significant API changes. It'll land on crates.io when the accompanying documentation is finished and when libraty itself is throughly unit-tested.
 
 * [x] Unreliable packets
 * [x] Reliable ordered packets
@@ -24,3 +27,15 @@ A low level UDP networking library for real-time applications and games. Largely
 
 * [ ] Fragmentable packets
 * [ ] Congestion control
+* [ ] Publish the library to crates.io
+* [ ] Unit tests
+
+
+## Getting Started
+Add netco package to your `Cargo.toml` file.
+
+```toml
+[dependencies]
+netco = { git = "https://github.com/Calandiel/netco.git" }
+```
+
