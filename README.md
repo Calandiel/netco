@@ -53,13 +53,13 @@ let mut sr = netco::server::Server::new(
 
 // CLIENT
 let mut cl = netco::client::Client::new(
-	"127.0.0.1:4567", // address to bind
-	"127.0.0.1:3456", // server address
-	100, // Game version
-	"password".to_string(), // server password that clients need to provide to connect
-	"Nickname".to_string(), // Nickname of the account to use
-	"client_password".to_string(), // Password of the account to use
-	true,
+  "127.0.0.1:4567", // address to bind
+  "127.0.0.1:3456", // server address
+  100, // Game version
+  "password".to_string(), // server password that clients need to provide to connect
+  "Nickname".to_string(), // Nickname of the account to use
+  "client_password".to_string(), // Password of the account to use
+  true,
 )
 .unwrap();
 ```
