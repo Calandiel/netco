@@ -1,3 +1,9 @@
+# Status notice
+This repo is largely very old code I've wrote over half a decade ago while learning the Rust language, with very little maintanance done over the years.
+Needless to say, while the code works (I've integrated it in many projects), you probably don't want to look under the hood.
+If you need a similar library, I suggest searching for a crate here:
+https://arewegameyet.rs/ecosystem/networking/
+
 # netco
 A low level UDP networking library for real-time applications and games. Developed as an alternative to [ENet][enet], [laminar][laminar] and [naia][naia]. Partially inspired by [Gaffer on Games][gog].
 
@@ -30,29 +36,6 @@ Unlike `laminar`, it takes a much stronger stance on heartbeats and reliability.
 [lambug]: https://github.com/TimonPost/laminar/issues/303
 
 `netco` should *never* panic and contains no unsafe code. This was verified by extensive use in one of authors projects but more formal unit testing will be performed before the library is published to crates.io.
-
-
-## Features
-
-* [x] Unreliable packets
-* [x] Reliable ordered packets
-* [x] Encrypted packets
-* [x] Protocol version monitoring
-* [x] Connection management
-* [x] Account creation and management
-* [x] Timeout detection
-* [x] Basic DoS mitigation
-* [x] Protocol versioning
-* [x] Handshake protocol
-* [x] Multithreadable
-
-### Planned
-
-* [ ] Fragmentable packets
-* [ ] Congestion control
-* [ ] Publish the library to crates.io
-* [ ] Unit tests
-
 
 ## Getting Started
 
@@ -155,15 +138,3 @@ cl.change_password("NewPassword".to_string()).unwrap();
 ## Authors
 
 - [Calandiel](https://github.com/Calandiel)
-
-
-## Contribution
-
-Unless you explicitly state otherwise, any contribution intentionally submitted
-for inclusion in the work by you, as defined in the MIT license, shall be licensed as above, without any
-additional terms or conditions.
-
-
-## License
-
-Licensed under the [MIT license](LICENSE)
